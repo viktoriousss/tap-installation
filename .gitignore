@@ -1,0 +1,7 @@
+#Tanzu Network Files
+tanzu-cluster-essentials-darwin-amd64-1.3.0.tgz
+tanzu-framework-darwin-amd64.tar
+00-set-environment-variables-viktorious.sh
+single-cluster/tap-values-viktorious.yaml
+.vscode/settings.json
+.DS_Store

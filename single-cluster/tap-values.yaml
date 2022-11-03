@@ -1,0 +1,70 @@
+shared:
+  ingress_domain: "domain.com" # An DNS A wildcard should exist *.domain.com
+  image_registry:
+    project_path: "<private registry address>/apps"
+    username: "<private registry user>"
+    password: "<private registry password>"
+  #kubernetes_distribution: "" # To be passed only for OpenShift. Defaults to "".
+  #ca_cert_data: | # To be passed if using custom certificates.
+  #    -----BEGIN CERTIFICATE-----
+  #    MIIFXzCCA0egAwIBAgIJAJYm37SFocjlMA0GCSqGSIb3DQEBDQUAMEY...
+  #    -----END CERTIFICATE-----
+
+ceip_policy_disclosed: true # Installation fails if this is not set to true. Not a string.
+
+#The above keys are minimum numbers of entries needed in tap-values.yaml to get a functioning TAP Full profile installation.
+
+#Below are the keys which may have default values set, but can be overridden.
+
+profile: full # Can take iterate, build, run, view.
+
+excluded_packages:
+- policy.apps.tanzu.vmware.com
+
+supply_chain: basic # Can take testing, testing_scanning.
+
+#ootb_supply_chain_testing: # Based on supply_chain set above, can be changed to ootb_supply_chain_testing, ootb_supply_chain_testing_scanning.
+ootb_supply_chain_basic:
+  registry:
+    server: "" # Takes the value from shared section above by default, but can be overridden by setting a different value.
+    repository: "" # Takes the value from shared section above by default, but can be overridden by setting a different value.
+  gitops:
+    ssh_secret: "" # Takes "" as value by default; but can be overridden by setting a different value.
+
+contour:
+  envoy:
+    service:
+      type: LoadBalancer # This is set by default, but can be overridden by setting a different value.
+
+buildservice:
+  kp_default_repository: "<private registry address>/build-service"
+  kp_default_repository_username: "<private registry user>"
+  kp_default_repository_password: "<private registry password>"
+
+tap_gui:
+  service_type: ClusterIP # If the shared.ingress_domain is set as above, this must be set to ClusterIP.
+  app_config:
+    organization:
+      name: "Your organization name"
+    catalog:
+      locations:
+        - type: url
+          target: https://github.com/asaikali/tap-gui-sample-catalog/blob/main/catalog-info.yaml
+    auth:
+      environment: development
+      providers:
+        github: # This is for github OAuth authentication to the TAP portal. Configure a new OAuth app for TAP here: https://github.com/settings/developers. Homepage URL is http://tap-gui.<ingress-domain configured earlier>.
+          development:
+            clientId: "<github client ID>"  # you need to get this value from GitHub Developer Settings OAuth2 page
+            clientSecret: "<github client secret>"
+
+metadata_store:
+  ns_for_export_app_cert: "development"
+  app_service_type: ClusterIP
+
+scanning:
+  metadataStore:
+    url: "" # Configuration is moved, so set this string to empty.
+
+grype:
+  targetImagePullSecret: "TARGET-REGISTRY-CREDENTIALS-SECRET"
