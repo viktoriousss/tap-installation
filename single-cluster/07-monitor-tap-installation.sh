@@ -8,4 +8,4 @@
 
 # Monitor TAP installation
 
-k get packageinstalls.packaging.carvel.dev -n tap-install -w
+kubectl get packageinstalls.packaging.carvel.dev -n tap-install -w
