@@ -1,4 +1,4 @@
-# 07-monitor-tap-installation
+# 08-configure-namespaces
 #
 # This scripts create an iterate and production namespace on your Kubernetes cluster
 #

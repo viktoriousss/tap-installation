@@ -7,3 +7,5 @@ single-cluster/tap-values-viktorious.yaml
 .DS_Store
 single-cluster/06-install-tap-viktorious.sh
 single-cluster/tkg01-for-tap-vsphere-with-tanzu-viktorious.yaml
+single-cluster/06b-install-tap-viktorious.sh
+single-cluster/09b-update-tap-viktorious.sh
