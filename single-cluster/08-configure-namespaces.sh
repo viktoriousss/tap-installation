@@ -1,6 +1,6 @@
 # 07-monitor-tap-installation
 #
-# This scripts monitors the installation of TAP.
+# This scripts create an iterate and production namespace on your Kubernetes cluster
 #
 # Run this script in the context of the Kubernetes cluster you're installing TAP to.
 # Use kubectl config set-context to switch to correct cluster prior to running this script.

@@ -15,3 +15,7 @@ export MY_REGISTRY_INSTALL_REPO=tap-install
 
 # TAP Version you're installing, this case 1.3.0
 export TAP_VERSION=1.3.0
+
+# Set iterate & developer namespace-names
+export ITERATE_NAMESPACE=tap-iterate
+export PRODUCTION_NAMESPACE=tap-production
