@@ -6,3 +6,4 @@ single-cluster/tap-values-viktorious.yaml
 .vscode/settings.json
 .DS_Store
 single-cluster/06-install-tap-viktorious.sh
+single-cluster/tkg01-for-tap-vsphere-with-tanzu-viktorious.yaml
