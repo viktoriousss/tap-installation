@@ -12,8 +12,8 @@
 # 
 
 mkdir $HOME/tanzu-cluster-essentials
-tar -xvf tanzu-cluster-essentials-darwin-amd64-1.3.0.tgz -C $HOME/tanzu-cluster-essentials
-export INSTALL_BUNDLE=registry.tanzu.vmware.com/tanzu-cluster-essentials/cluster-essentials-bundle@sha256:54bf611711923dccd7c7f10603c846782b90644d48f1cb570b43a082d18e23b9
+tar -xvf $TANZU_CLUSTER_ESSENTIALS_FILE -C $HOME/tanzu-cluster-essentials
+export INSTALL_BUNDLE=$TANZU_CLUSTER_ESSENTIALS_INSTALL_BUNDLE
 export INSTALL_REGISTRY_HOSTNAME=registry.tanzu.vmware.com
 export INSTALL_REGISTRY_USERNAME=$TANZU_NET_USER
 export INSTALL_REGISTRY_PASSWORD=$TANZU_NET_PASSWORD
