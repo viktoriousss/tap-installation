@@ -11,7 +11,7 @@ spec:
       storageClass: <storage class where to deploy the cluster>
       tkr:
         reference:
-          name: v1.22.9---vmware.1-tkg.1.cc71bc8
+          name: v1.23.8---vmware.3-tkg.1
     nodePools:
     - name: worker-nodepool-a1
       replicas: 4
@@ -24,7 +24,7 @@ spec:
             storage: 200Gi
       tkr:
         reference:
-          name: v1.22.9---vmware.1-tkg.1.cc71bc8
+          name: v1.23.8---vmware.3-tkg.1
   settings:
     storage:
       classes: [<storage class where to deploy the cluster>]
