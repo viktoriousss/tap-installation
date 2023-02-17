@@ -13,8 +13,17 @@ export TANZU_NET_PASSWORD=<Tanzu Network Password>
 export MY_REGISTRY=<Private registry URL - e.g. registry.azurecr.io>
 export MY_REGISTRY_USER=<Private registry login>
 export MY_REGISTRY_PASSWORD=<Private registry password>
+
 # Name of repository where you want to store TAP installation files
 export MY_REGISTRY_INSTALL_REPO=tap-install
+
+# Only add the next lines if you're using the supply_chain: testing or testing_scanning setting in tap-values.yaml
+# By default Tekton will pull test images from dockerhub. If you're using another registry for this, access to Dockerhub is not required.
+# The Dockerhub account is required for solves rate-limiting issues: https://docs.docker.com/docker-hub/download-rate-limit/
+#
+export $DOCKERHUB_USER=<Dockerhub Username>
+export $DOCKERHUB_PASSWORD=<Dockerhub Password>
+export $DOCKERHUB_EMAIL=<Dockerhub email-address linked to the username>
 
 # Set iterate & developer namespace-names
 #

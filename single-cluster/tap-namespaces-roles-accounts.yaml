@@ -14,9 +14,22 @@ metadata:
   name: default
 secrets:
   - name: registry-credentials
+  - name: tap-registry
+  #
+  # Only add the next line if you're using the supply_chain: testing or testing_scanning setting in tap-values.yaml
+  # By default Tekton will pull test images from dockerhub. If you're using another registry for this, access to Dockerhub is not required.
+  # The Dockerhub account is required for solves rate-limiting issues: https://docs.docker.com/docker-hub/download-rate-limit/
+  #
+  - name: dockerhub-credentials
 imagePullSecrets:
   - name: registry-credentials
   - name: tap-registry
+  #
+  # Only add the next line if you're using the supply_chain: testing or testing_scanning setting in tap-values.yaml
+  # By default Tekton will pull test images from dockerhub. If you're using another registry for this, access to Dockerhub is not required. 
+  # The Dockerhub account is required for solves rate-limiting issues: https://docs.docker.com/docker-hub/download-rate-limit/
+  #
+  - name: dockerhub-credentials
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
