@@ -12,3 +12,5 @@ single-cluster/09b-update-tap-viktorious.sh
 single-cluster/tanzu-cluster-essentials-darwin-amd64-1.4.0.tgz
 single-cluster/tanzu-framework-darwin-amd64-v0.25.4.1.tar
 single-cluster/tap-values-viktorious-1.4.0.yaml
+single-cluster/tap-values-tanzu.dk.yaml
+single-cluster/tap-values-viktorious-1.4.0-with-testing.yaml
