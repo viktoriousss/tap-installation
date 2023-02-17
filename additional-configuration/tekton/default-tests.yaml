@@ -25,8 +25,6 @@ spec:
             image: gradle
             script: |-
               set -ex
-              #rm -rf ~/.m2
-              #ln -fs $(workspaces.pipeline-cache.path) ~/.m2
               cd `mktemp -d`
               curl -s $(params.source-url) | tar -xzf -
               ./mvnw clean test -V
