@@ -17,18 +17,28 @@ export MY_REGISTRY_PASSWORD=<Private registry password>
 # Name of repository where you want to store TAP installation files
 export MY_REGISTRY_INSTALL_REPO=tap-install
 
-# Only add the next lines if you're using the supply_chain: testing or testing_scanning setting in tap-values.yaml
-# By default Tekton will pull test images from dockerhub. If you're using another registry for this, access to Dockerhub is not required.
-# The Dockerhub account is required for solves rate-limiting issues: https://docs.docker.com/docker-hub/download-rate-limit/
-#
-export $DOCKERHUB_USER=<Dockerhub Username>
-export $DOCKERHUB_PASSWORD=<Dockerhub Password>
-export $DOCKERHUB_EMAIL=<Dockerhub email-address linked to the username>
-
 # Set iterate & developer namespace-names
 #
 export ITERATE_NAMESPACE=tap-iterate
 export PRODUCTION_NAMESPACE=tap-production
+
+# Set postgresql DB parameters. Database is used for persistence in TAP
+#
+export POSTGRESNAMESPACE=<kubernetes namespace to install postgresql to>
+export POSTGRESPASSWORD=<password for the postgres admin user>
+export POSTGRESUSERNAME=<username for another user>
+export POSTGRESUSERPASSWORD=<password for another user>
+
+# --------------------- Only configure this part if required ---------------------
+#
+# Only add the next lines if you're using the supply_chain: testing or testing_scanning setting in tap-values.yaml
+#
+# By default Tekton (used for testing) will pull test images from dockerhub. If you're using another registry for this, access to Dockerhub is not required.
+# The Dockerhub account is required for solves rate-limiting issues: https://docs.docker.com/docker-hub/download-rate-limit/ (if applicable)
+#
+export $DOCKERHUB_USER=<Dockerhub Username>
+export $DOCKERHUB_PASSWORD=<Dockerhub Password>
+export $DOCKERHUB_EMAIL=<Dockerhub email-address linked to the username>
 
 # --------------------- Version specific TAP installation parameters below here ---------------------
 #

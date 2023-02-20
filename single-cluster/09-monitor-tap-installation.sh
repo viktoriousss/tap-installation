@@ -1,4 +1,4 @@
-# 07-monitor-tap-installation
+# 09-monitor-tap-installation
 #
 # This scripts monitors the installation of TAP.
 #
@@ -7,5 +7,5 @@
 #
 
 # Monitor TAP installation
-
+#
 kubectl get packageinstalls.packaging.carvel.dev -n tap-install -w
