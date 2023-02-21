@@ -47,7 +47,7 @@ Script 08-install-tap.sh installs TAP (supply_chain: basic).
 
 Script 09-add-tekton-testing.sh creates an initial configuration for Tekton (supply_chain: testing and/or supply_chain: testing_scanning)
 
-Script 10-add-scanning-policy.sh creates an initial configuration for Tekton (supply_chain: testing_scanning)
+Script 10-add-scanning-policy.sh creates an initial configuration for Grype (supply_chain: testing_scanning)
 
 ```bash
 # Install TAP (finally)
