@@ -4,7 +4,7 @@ Prerequisites: https://www.viktorious.nl/2022/11/11/scripted-installation-of-tan
 
 Also make sure you have Helm available on your system.
 
-# Setup environment variables and install Tanzu CLI (if applicable)
+# Setup environment variables and install Tanzu CLI
 First steps, configuring some prerequisites. Edit 00-set-environment-variables.sh so it reflects the settings for your environment.
 ```bash
 # Allow run-as-root on TKGs cluster (not required on other Kubernetes flavours)
