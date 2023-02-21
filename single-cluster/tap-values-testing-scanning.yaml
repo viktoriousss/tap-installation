@@ -21,7 +21,7 @@ profile: full # Can take iterate, build, run, view.
 excluded_packages:
 - policy.apps.tanzu.vmware.com
 
-supply_chain: basic # Can take testing, testing_scanning.
+supply_chain: testing_scanning # Can take testing, testing_scanning.
 
 #ootb_supply_chain_testing: # Based on supply_chain set above, can be changed to ootb_supply_chain_testing, ootb_supply_chain_testing_scanning.
 ootb_supply_chain_basic:
@@ -57,6 +57,14 @@ tap_gui:
           development:
             clientId: "<github client ID>"  # you need to get this value from GitHub Developer Settings OAuth2 page
             clientSecret: "<github client secret>"
+    proxy:
+      /metadata-store:
+        target: https://metadata-store-app.metadata-store:8443/api/v1
+        changeOrigin: true
+        secure: false
+        headers:
+          Authorization: "Bearer XYZ" # Enter the metadata token here also see script ./11-configure-scanning-policy.sh and this page: http://captainvirtualization.com/tap-metadatastore-error/ 
+          X-Custom-Source: project-star
     backend:
       database:
         client: pg
@@ -69,8 +77,9 @@ tap_gui:
           #ssl: { rejectUnauthorized: false } # Set to true if using SSL
           ssl: false
 
+
 metadata_store:
-  ns_for_export_app_cert: "development"
+  ns_for_export_app_cert: "" #set the namespace as configured in $PRODUCTION_NAMESPACE
   app_service_type: ClusterIP
 
 scanning:
