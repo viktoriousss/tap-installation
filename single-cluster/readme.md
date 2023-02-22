@@ -38,7 +38,7 @@ Kubernetes cluster should be available at this time. You should also have a priv
 # Because we're going to install TAP on a single cluster, a iterate and production cluster is created.
 ./06-configure-namespaces.sh
 
-# Install database (if there's already a database available you might want to skip this) + TAP using Helm.
+# Install database (if there's already a database available you might want to skip this) using Helm.
 ./07-install-database.sh
 ```
 
