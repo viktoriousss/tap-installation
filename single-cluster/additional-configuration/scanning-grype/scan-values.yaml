@@ -1,0 +1,3 @@
+metadataStore:
+    url: "" # Configuration is moved, so set this string to empty
+    namespace: tap-install

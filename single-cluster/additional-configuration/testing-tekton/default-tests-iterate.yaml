@@ -21,7 +21,7 @@ spec:
           - name: source-revision
         steps:
           - name: test
-            image: python
+            image: gcr.io/cloud-builders/gradle
             script: |-
               echo Default test - doing nothing
 ---
@@ -48,7 +48,7 @@ spec:
           - name: source-revision
         steps:
           - name: test
-            image: gradle
+            image: gcr.io/cloud-builders/gradle
             script: |-
             script: |-
               cd `mktemp -d`

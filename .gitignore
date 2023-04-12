@@ -16,3 +16,6 @@ single-cluster/tap-values-tanzu.dk.yaml
 single-cluster/tap-values-viktorious-1.4.0-with-testing.yaml
 single-cluster/08b-install-tap-viktorious.sh
 single-cluster/additional-configuration/db/postgresql-values.yaml
+single-cluster/tap-values-viktorious-1.4.0-with-testing-scanning.yaml
+single-cluster/tkg02-for-tap-vsphere-with-tanzu-viktorious.yaml
+single-cluster/tanzu-framework-darwin-amd64-v0.25.4.5.tar

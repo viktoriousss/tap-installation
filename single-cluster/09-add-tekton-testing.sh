@@ -1,6 +1,7 @@
 # 10-add-tekton-testing
 #
 
-# Monitor TAP installation
+# Add tekton testing
 #
-kubectl apply -f ./additional-configuration/testing-tekton/default-tests.yaml
+kubectl apply -f  ./additional-configuration/testing-tekton/default-tests-production.yaml -n $PRODUCTION_NAMESPACE
+kubectl apply -f  ./additional-configuration/testing-tekton/default-tests-iterate.yaml -n $ITERATE_NAMESPACE

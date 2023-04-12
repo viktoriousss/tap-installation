@@ -2,7 +2,8 @@
 #
 # Configure grype default scanning policy
 #
-kubectl apply -f ./additional-configuration/scanning-grype/scanpolicy.yaml
+kubectl apply -f ./additional-configuration/scanning-grype/scanpolicy.yaml -n $PRODUCTION_NAMESPACE
+kubectl apply -f ./additional-configuration/scanning-grype/scanpolicy.yaml -n $ITERATE_NAMESPACE
 
 echo 
 echo "--------------------------------------------------------------------------------------------------------------"
