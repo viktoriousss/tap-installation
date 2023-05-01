@@ -1,0 +1,5 @@
+data:
+  issuerRef: |
+    kind: ClusterIssuer
+    name: letsencrypt-route53
+  

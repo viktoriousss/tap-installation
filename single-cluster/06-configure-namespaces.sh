@@ -1,4 +1,4 @@
-# 08-configure-namespaces
+# 08-configure-namespaces.sh
 #
 # This scripts create an iterate and production namespace on your Kubernetes cluster
 #

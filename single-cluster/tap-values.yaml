@@ -18,13 +18,10 @@ ceip_policy_disclosed: true # Installation fails if this is not set to true. Not
 
 profile: full # Can take iterate, build, run, view.
 
-excluded_packages:
-- policy.apps.tanzu.vmware.com
-
-supply_chain: basic # Can take testing, testing_scanning.
+supply_chain: basic # Can take basic, testing, testing_scanning.
 
 #ootb_supply_chain_testing: # Based on supply_chain set above, can be changed to ootb_supply_chain_testing, ootb_supply_chain_testing_scanning.
-ootb_supply_chain_basic:
+ootb_supply_testing_scanning:
   registry:
     server: "" # Takes the value from shared section above by default, but can be overridden by setting a different value.
     repository: "" # Takes the value from shared section above by default, but can be overridden by setting a different value.
@@ -42,6 +39,9 @@ buildservice:
   kp_default_repository_password: "<private registry password>"
 
 tap_gui:
+  tls:
+    namespace: cert-manager
+    secretName: tap-gui  
   service_type: ClusterIP # If the shared.ingress_domain is set as above, this must be set to ClusterIP.
   app_config:
     organization:
@@ -64,8 +64,8 @@ tap_gui:
           # Hostname is composed as following: postgresql.$POSTGRESNAMESPACE.svc.cluster.local
           host: postgresql.postgresql.svc.cluster.local
           port: 5432
-          user: "" #Set the admin user as configured in $POSTGRESUSERNAME
-          password: "" #Set the admin user password as configured in POSTGRESUSERNAMEPASSWORD
+          user: "" #Set the admin user as configured in $POSTGRESUSERNAME in 00-set-environment-variables.sh
+          password: "" #Set the admin user password as configured in POSTGRESUSERNAMEPASSWORD in 00-set-environment-variables.sh
           #ssl: { rejectUnauthorized: false } # Set to true if using SSL
           ssl: false
 
@@ -78,4 +78,5 @@ scanning:
     url: "" # Configuration is moved, so set this string to empty.
 
 grype:
+  namespace: "development"
   targetImagePullSecret: "TARGET-REGISTRY-CREDENTIALS-SECRET"
