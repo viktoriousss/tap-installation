@@ -1,21 +1,4 @@
 #Tanzu Network Files
-tanzu-cluster-essentials-darwin-amd64-1.3.0.tgz
-tanzu-framework-darwin-amd64.tar
-00-set-environment-variables-viktorious.sh
-single-cluster/tap-values-viktorious.yaml
-.vscode/settings.json
-.DS_Store
-single-cluster/06-install-tap-viktorious.sh
-single-cluster/tkg01-for-tap-vsphere-with-tanzu-viktorious.yaml
-single-cluster/06b-install-tap-viktorious.sh
-single-cluster/09b-update-tap-viktorious.sh
-single-cluster/tanzu-cluster-essentials-darwin-amd64-1.4.0.tgz
-single-cluster/tanzu-framework-darwin-amd64-v0.25.4.1.tar
-single-cluster/tap-values-viktorious-1.4.0.yaml
-single-cluster/tap-values-tanzu.dk.yaml
-single-cluster/tap-values-viktorious-1.4.0-with-testing.yaml
-single-cluster/08b-install-tap-viktorious.sh
-single-cluster/additional-configuration/db/postgresql-values.yaml
-single-cluster/tap-values-viktorious-1.4.0-with-testing-scanning.yaml
-single-cluster/tkg02-for-tap-vsphere-with-tanzu-viktorious.yaml
-single-cluster/tanzu-framework-darwin-amd64-v0.25.4.5.tar
+single-cluster/tanzu-cluster-essentials-darwin-amd64-*.tgz
+single-cluster/tanzu-framework-darwin-amd64*.tar
+*viktorious*
