@@ -2,3 +2,4 @@
 single-cluster/tanzu-cluster-essentials-darwin-amd64-*.tgz
 single-cluster/tanzu-framework-darwin-amd64*.tar
 *viktorious*
+*DS_Store*
