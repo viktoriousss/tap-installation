@@ -1,6 +1,7 @@
 # 03-deploy-cluster-essentials.sh
 #
-# This script is only required for non-TKGm clusters (AKS, EKS, GKE, etc.). For TKGs (vSphere with Tanzu) it's also required to install Cluster Essentials.
+# This script is only required for non-TKGm clusters (AKS, EKS, GKE, etc.). For vSphere /w Tanzu v7 it's also required to install Cluster Essentials. vSphere /w Tanzu v8 TKG clusters 
+# have cluster essentials available out-of-the-box.
 #
 # Run this script in the context of the Kubernetes cluster you're planning to install TAP on.
 # Use 'kubectl config set-context <kubernetes context>' to switch to correct cluster prior to running this script.
