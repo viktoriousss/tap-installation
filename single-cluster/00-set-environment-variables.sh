@@ -55,17 +55,28 @@ export TAP_VERSION=1.5.0
 #
 export TANZU_CLI_FILE=tanzu-framework-darwin-amd64-v0.28.1.1.tar
 
-# Tanzu CLI version - you have to download this file from https://network.tanzu.vmware.com/
-# 1.3.x: v0.25.0
-# 1.4.x: v0.25.4
-# 1.5.x: v0.28.1
+# Tanzu CLI version - you have to download this file from https://network.pivotal.io/
 #
-export TANZU_CLI_VERSION=v0.28.1
+# MacOS:
+# 1.3.x: v0.25.0/tanzu-core-darwin_amd64
+# 1.4.x: v0.25.4/tanzu-core-darwin_amd64
+# 1.5.x: v0.28.1/tanzu-core-darwin_amd64
+#
+# Linux:
+# 1.3.x: v0.25.0/tanzu-core-linux_amd64
+# 1.4.x: v0.25.4/tanzu-core-linux_amd64
+# 1.5.x: v0.28.1/tanzu-core-linux_amd64
+#
+export TANZU_CLI_VERSION=v0.28.1/tanzu-core-darwin_amd64
 
 # Cluster essentials file - you have to download this file from https://network.tanzu.vmware.com/
-# 1.3.x: tanzu-framework-darwin-amd64.tar
-# 1.4.0: tanzu-framework-darwin-amd64-v0.25.4.1.tar
+# MacOS:
+# 1.3.x: tanzu-framework-darwin-amd64.tgz
+# 1.4.0: tanzu-framework-darwin-amd64-v0.25.4.1.tgz
 # 1.5.0: tanzu-cluster-essentials-darwin-amd64-1.5.0.tgz
+#
+# Linux:
+# 1.5.0: tanzu-cluster-essentials-linux-amd64-1.5.0.tgz
 #
 export TANZU_CLUSTER_ESSENTIALS_FILE=tanzu-cluster-essentials-darwin-amd64-1.5.0.tgz
 

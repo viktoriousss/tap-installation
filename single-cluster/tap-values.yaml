@@ -1,6 +1,6 @@
 shared:
   ingress_domain: "domain.com" # An DNS A wildcard should exist *.domain.com
-  image_registry:
+  image_registry: #Configure your private registry here
     project_path: "<private registry address>/apps"
     username: "<private registry user>"
     password: "<private registry password>"
@@ -18,7 +18,7 @@ ceip_policy_disclosed: true # Installation fails if this is not set to true. Not
 
 profile: full # Can take iterate, build, run, view.
 
-supply_chain: basic # Can take basic, testing, testing_scanning.
+supply_chain: testing_scanning # Can take basic, testing, testing_scanning.
 
 #ootb_supply_chain_testing: # Based on supply_chain set above, can be changed to ootb_supply_chain_testing, ootb_supply_chain_testing_scanning.
 ootb_supply_testing_scanning:

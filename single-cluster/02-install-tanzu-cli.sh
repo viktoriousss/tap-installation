@@ -7,11 +7,12 @@
 # - Change install command to sudo install cli/core/$VERSION/tanzu-core-linux_amd64 /usr/local/bin/tanzu
 #
 
+mkdir $HOME/tanzu
 tar -xvf $TANZU_CLI_FILE -C $HOME/tanzu
 cd $HOME/tanzu
 #use the parameter TANUZ_CLI_VERSION to set VERSION (and follow the format as shared in the TAP documentation)
-export VERSION=$TANZU_CLI_VERSION
-sudo install cli/core/$VERSION/tanzu-core-darwin_amd64 /usr/local/bin/tanzu
+export TANZU_CLI_NO_INIT=true
+sudo install cli/core/$TANZU_CLI_VERSION /usr/local/bin/tanzu
 tanzu plugin install --local cli all
 tanzu plugin list
 tanzu version
