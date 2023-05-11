@@ -14,16 +14,18 @@ kubectl create clusterrolebinding default-tkg-admin-privileged-binding --cluster
 source 00-set-environment-variables.sh
 
 # Removal of Tanzu CLI - only if a previous version of Tanzu CLI is installed on your system.
+# Be careful if you have Tanzu CLI installed to manage existing TKGs/TKGm environment.
 ./01-remove-tanzu-cli.sh
 
 # Install Tanzu CLI - only if Tanzu CLI is not available on your system.
+# Will install TAP specific plugins
 ./02-install-tanzu-cli.sh
 ```
 
 # Prepare Kubernetes environment, registry and deploy database
 Kubernetes cluster should be available at this time. You should also have a private registry available. Helm is also required.
 ```bash
-# Deploy cluster essentials on K8S cluster (not required for TKGm, required for TKGs and other K8S distributions)
+# Deploy cluster essentials on K8S cluster (not required for TKGm and TKGs on vSphere 8, required for TKGs on vSphere 7 and other K8S distributions)
 ./03-deploy-cluster-essentials.sh
 
 # Relocate images to your private registry. Not required if you use script 05b-add-repo-to-cluster.
@@ -43,21 +45,24 @@ Kubernetes cluster should be available at this time. You should also have a priv
 ```
 
 # Install Tanzu Application Platform
-Script 08-install-tap.sh installs TAP (supply_chain: basic).
+Script 08-install-tap.sh installs TAP using tap-values.yaml for configuration of TAP.
 
-Script 09-add-tekton-testing.sh creates an initial configuration for Tekton (supply_chain: testing and/or supply_chain: testing_scanning)
+Script 10-add-tekton-testing.sh creates an initial configuration for Tekton (supply_chain: testing and/or supply_chain: testing_scanning)
 
-Script 10-add-scanning-policy.sh creates an initial configuration for Grype (supply_chain: testing_scanning)
+Script 11-add-scanning-policy.sh creates an initial configuration for Grype (supply_chain: testing_scanning)
 
 ```bash
 # Install TAP (finally)
 ./08-install-tap.sh
 
+# Configure TLS certificates for tap-gui
+./09-tap-configure-tls.sh
+
 # Add default Tekton scanning policy
-./09-add-tekton-testing
+./10-add-tekton-testing
 
 # Add default Grype scanning policy
-./10-add-scanning-policy.sh
+./11-add-scanning-policy.sh
 ```
 
 # Maintenance scripts
