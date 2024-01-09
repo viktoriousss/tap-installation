@@ -6,4 +6,6 @@
 # Use kubectl config set-context to switch to correct cluster prior to running this script.
 #
 # Remove TAP
+#
+
 tanzu package installed delete tap -n tap-install

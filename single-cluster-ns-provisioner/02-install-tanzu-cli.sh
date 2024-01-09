@@ -2,7 +2,7 @@
 #
 # 02-instal-tanzu-cli.sh
 #
-# This script runs on MacOS and Linux.
+# This bash script runs on MacOS, Linux and Windows (using "bash 02-install-tanzu-cli.sh").
 #
 
 echo "Welcome to the Tanzu CLI installation"
@@ -13,8 +13,11 @@ while true; do
     echo "2. Chocolatey (Windows)"
     echo "3. APT (Debian/Ubuntu)"
     echo "4. YUM (RedHat)"
+    echo "5. Binary download (Linux)"
+    echo "6. Binary download (MacOS)"
+    echo "9. Exit"
 
-    read -p "Enter your choice (1-5): " choice
+    read -p "Enter your choice (1-6 or 9): " choice
 
     case $choice in
         1)
@@ -56,21 +59,30 @@ gpgkey=https://packages.vmware.com/tools/keys/VMWARE-PACKAGING-GPG-RSA-KEY.pub
 EOF
             sudo yum install -y tanzu-cli # If you are using DNF, run sudo dnf install -y tanzu-cli.
             ;;
+       
+       5)
+            # Option 5: Binary download
+            echo "Installing binary download Linux"
+            # $TANZU_CLI_FILE - this variable should be set in 00-set-environment-variables.sh
+            tar -xvf $TANZU_CLI_FILE
+            sudo install tanzu-cli-linux_amd64 /usr/local/bin/tanzu
+            ;;
+
+        6)
+            # Option 5: Binary download
+            echo "Installing binary download MacOS"
+            # $TANZU_CLI_FILE - this variable should be set in 00-set-environment-variables.sh
+            tar -xvf $TANZU_CLI_FILE
+            install tanzu-cli-darwin_amd64 /usr/local/bin/tanzu
+            ;;
+
+        9)
+            exit
+            ;;
+
         *)
             # Invalid option
             echo "Invalid option. Please enter a number between 1 and 4."
             ;;
     esac
 done
-
-
-# --- Below is the binary download / installation procedure -> I prefer to use the package management option
-#mkdir $HOME/tanzu
-#tar -xvf $TANZU_CLI_FILE -C $HOME/tanzu
-#cd $HOME/tanzu
-#use the parameter TANUZ_CLI_VERSION to set VERSION (and follow the format as shared in the TAP documentation)
-#export TANZU_CLI_NO_INIT=true
-#sudo install cli/core/$TANZU_CLI_VERSION /usr/local/bin/tanzu
-#tanzu plugin install --local cli all
-#tanzu plugin list
-#tanzu version

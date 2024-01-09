@@ -5,3 +5,5 @@ single-cluster/tanzu-framework*.tar
 *DS_Store*
 single-cluster-ns-provisioner/tanzu-cluster-essentials-darwin-amd64-1.7.2.tgz
 .DS_Store
+.DS_Store
+.DS_Store
