@@ -7,4 +7,6 @@ Detailed description here:
 
 Currently only a single cluster TAP scripted installation is available, multi-cluster TAP installation will follow. Version 1.3, 1.4 and 1.5 will work.
 
+For TAP 1.7 please use "single-cluster-ns-provisioner".
+
 Use at own risk, goal is to get TAP up and running quickly in testing/demo environment.
